@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Globe, User, ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { fadeIn } from '../utils/animations';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,13 +24,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <a href="/" className={`${fadeIn(100)} font-bold text-2xl ${isScrolled ? 'text-deep-blue' : 'text-white'}`}>
+        <Link to="/" className={`${fadeIn(100)} font-bold text-2xl ${isScrolled ? 'text-deep-blue' : 'text-white'}`}>
           <span className="text-gold">Air</span>Egypt
-        </a>
+        </Link>
 
         <nav className={`hidden lg:flex items-center space-x-8 ${isScrolled ? 'text-deep-blue' : 'text-white'}`}>
-          <a href="#" className={`${fadeIn(200)} hover:text-gold transition-colors duration-300`}>الرئيسية</a>
-          <a href="#" className={`${fadeIn(300)} hover:text-gold transition-colors duration-300`}>الرحلات</a>
+          <Link to="/" className={`${fadeIn(200)} hover:text-gold transition-colors duration-300`}>الرئيسية</Link>
+          <Link to="/booking" className={`${fadeIn(300)} hover:text-gold transition-colors duration-300`}>حجز الرحلات</Link>
           <a href="#" className={`${fadeIn(400)} hover:text-gold transition-colors duration-300`}>العروض</a>
           <a href="#" className={`${fadeIn(500)} hover:text-gold transition-colors duration-300`}>الوجهات</a>
           <a href="#" className={`${fadeIn(600)} hover:text-gold transition-colors duration-300`}>تواصل معنا</a>
@@ -65,8 +66,8 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`lg:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} bg-white shadow-lg absolute w-full`}>
         <div className="container mx-auto px-4 py-4 space-y-4">
-          <a href="#" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">الرئيسية</a>
-          <a href="#" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">الرحلات</a>
+          <Link to="/" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">الرئيسية</Link>
+          <Link to="/booking" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">حجز الرحلات</Link>
           <a href="#" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">العروض</a>
           <a href="#" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">الوجهات</a>
           <a href="#" className="block py-2 text-deep-blue hover:text-gold transition-colors duration-300">تواصل معنا</a>

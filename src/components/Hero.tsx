@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { PlaneTakeoff, MapPin } from 'lucide-react';
 import { fadeUp } from '../utils/animations';
+import { Link } from 'react-router-dom';
 
 const destinations = [
   "القاهرة", "الإسكندرية", "الأقصر", "أسوان", "شرم الشيخ", "الغردقة", "دبي", "الرياض", "اسطنبول", "لندن", "باريس", "روما"
@@ -82,9 +83,9 @@ const Hero = () => {
                 />
               </div>
               
-              <button className="w-full md:w-1/3 bg-deep-blue hover:bg-deep-blue/90 text-white py-3 px-6 rounded-lg transition-all duration-300 font-semibold shadow-md hover:shadow-lg">
+              <Link to="/booking" className="w-full md:w-1/3 bg-deep-blue hover:bg-deep-blue/90 text-white py-3 px-6 rounded-lg transition-all duration-300 font-semibold shadow-md hover:shadow-lg text-center">
                 ابحث عن الرحلات
-              </button>
+              </Link>
             </div>
           </div>
         </div>
